@@ -1,16 +1,18 @@
-package com.services;
+package com.bean;
 
-import java.sql.ResultSet;
+import java.sql.*;
 
-import com.bean.*;
+import com.connection.DBconnection;
 
-public class CategoryServicesImpl implements CategoryService{
+public class CategoryBeanImpl implements CategoryBean{
 
-	CategoryBean cb = new CategoryBeanImpl();
+	Connection con;
 	
 	@Override
 	public boolean createCategory() {
 		// TODO Auto-generated method stub
+		
+		
 		return false;
 	}
 
@@ -18,7 +20,10 @@ public class CategoryServicesImpl implements CategoryService{
 	public ResultSet getCategories() throws Exception {
 		// TODO Auto-generated method stub
 		
-		return cb.getCategories();
+		con = DBconnection.getConnection();
+		
+		
+		return null;
 	}
 
 }

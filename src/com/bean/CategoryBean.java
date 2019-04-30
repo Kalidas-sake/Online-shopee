@@ -1,12 +1,10 @@
-package com.services;
+package com.bean;
 
 import java.sql.ResultSet;
 
-public interface CategoryService {
+public interface CategoryBean {
 
 	boolean createCategory();
 	
 	ResultSet getCategories() throws Exception;
-	
-	
 }

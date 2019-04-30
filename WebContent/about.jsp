@@ -11,13 +11,17 @@
 .fonta{
 font-family: 'Gugi', cursive;
 }
+
+.mr-3{
+color: black;
+}
 </style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
 	<div class="album py-5 bg-light">
-		<div class="container">
+		
 			<div class="jumbotron text-center">
 				<h3 class="fonta">About Us</h3>
 				<p>"About Us" pages might encompass the values of more than one
@@ -33,14 +37,15 @@ font-family: 'Gugi', cursive;
 			</div>
 			
 			<div class="row">
-			
-			<div class="col-sm-4">
+			<div class="col-sm-3">
+			</div>
+			<div class="col-sm-3">
 				<!-- Card -->
 				<div class="card shadow-sm">
 
 					<!-- Card image -->
 					<img class="card-img-top"
-						src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
+						src="img/kali.jpg"
 						alt="Card image cap">
 
 					<!-- Card content -->
@@ -48,13 +53,21 @@ font-family: 'Gugi', cursive;
 
 						<!-- Title -->
 						<h4 class="card-title">
-							<a>Card title</a>
+							<a>Mr. Kaleedas Sake</a>
 						</h4>
 						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text">Pursuing Bachelors degree From SKN Sinhagad Institute Lonavala.<br>Skilled Web Developer</p>
 						<!-- Button -->
-						<a href="#" class="btn btn-primary">Button</a>
+						<!--Facebook-->
+						<a class="fb-ic mr-3" role="button" href="http://www.facebook.com" target="_blank"><i class="fab fa-lg fa-facebook-f"></i></a>
+						<!--Twitter-->
+						<a class="tw-ic mr-3" role="button" href="" target="_blank"><i class="fab fa-lg fa-twitter"></i></a>
+						<!--Google +-->
+						<a class="gplus-ic mr-3" role="button" href="" target="_blank"><i class="fab fa-lg fa-google-plus-g"></i></a>
+						<!--Linkedin-->
+						<a class="li-ic mr-3" role="button" href="" target="_blank"><i class="fab fa-lg fa-linkedin-in"></i></a>
+						<!--Instagram-->
+						<a class="ins-ic mr-3" role="button" href="" target="_blank"><i class="fab fa-lg fa-instagram"></i></a>
 
 					</div>
 
@@ -62,13 +75,13 @@ font-family: 'Gugi', cursive;
 				<!-- Card -->
 			</div>
 			
-			<div class="col-sm-4">
+			<div class="col-sm-3">
 				<!-- Card -->
 				<div class="card shadow-sm">
 
 					<!-- Card image -->
 					<img class="card-img-top"
-						src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
+						src="img/ashok.jpg"
 						alt="Card image cap">
 
 					<!-- Card content -->
@@ -76,22 +89,31 @@ font-family: 'Gugi', cursive;
 
 						<!-- Title -->
 						<h4 class="card-title">
-							<a>Card title</a>
+							<a>Mr. Ashok Mandage</a>
 						</h4>
 						<!-- Text -->
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text">BE Computer Engineer.<br>Graduated from JSPM's RSCOE Tathawade,  </p>
 						<!-- Button -->
-						<a href="#" class="btn btn-primary">Button</a>
-
-					
+						<!--Facebook-->
+						<a class="fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+						<!--Twitter-->
+						<a class="tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+						<!--Google +-->
+						<a class="gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+						<!--Linkedin-->
+						<a class="li-ic mr-3" role="button"><i class="fab fa-lg fa-linkedin-in"></i></a>
+						<!--Instagram-->
+						<a class="ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+											
 
 				</div>
 				<!-- Card -->
 				</div>
 			</div>
+			<div class="col-sm-3">
 			</div>
-		</div>
+			</div>
+		
 	</div>
 
 

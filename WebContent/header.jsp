@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
 	rel="stylesheet">
+	
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+	
+
 <style>
 .body {
 	font-family: 'Montserrat', sans-serif;
@@ -15,6 +21,8 @@
 .mybar{
 margin-top: 40px;
 }
+
+
 </style>
 
 </head>
@@ -30,11 +38,11 @@ margin-top: 40px;
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item ">
+						<a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+					</li>
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown"
-						href="#">Categories </a>
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Categories </a>
 						<div class="dropdown-menu"> 
 							<%
 							CategoryService cs = new CategoryServicesImpl();
@@ -57,4 +65,23 @@ margin-top: 40px;
 		</nav>
 		<div class="mybar"></div>
 	</header>
+	
+	<script type="text/javascript">
+	
+	// Get the container element
+	var btnContainer = document.getElementById("navbarCollapse");
+
+	// Get all buttons with class="btn" inside the container
+	var btns = btnContainer.getElementsByClassName("nav-link");
+
+	// Loop through the buttons and add the active class to the current/clicked button
+	for (var i = 0; i < btns.length; i++) {
+	  btns[i].addEventListener("click", function() {
+		//  alert("alert");
+	    var current = document.getElementsByClassName("active");
+	    current[0].className = current[0].className.replace(" active", "");
+	    this.className += " active";
+	  });
+	}
+	</script>
 </body>

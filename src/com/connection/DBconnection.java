@@ -15,7 +15,7 @@ public class DBconnection {
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopee", "root", "");
-		System.out.println("Connection created");	
+		//System.out.println("Connection created");	
 		return con;
 	}
 }

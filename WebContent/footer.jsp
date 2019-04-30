@@ -1,6 +1,6 @@
 <footer class="footer text-center bg-dark ">
 <div class="jumbotron">
-<h1>OnlineShoppe.Com</h1>
+<h1>OnlineShopee.Com</h1>
 <h6>All rights reserved <small>Copyright &copy 2019 </small></h6>
 </div>
 </footer>

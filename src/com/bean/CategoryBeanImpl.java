@@ -6,7 +6,6 @@ import com.connection.DBconnection;
 
 public class CategoryBeanImpl implements CategoryBean{
 
-	Connection con;
 	
 	@Override
 	public boolean createCategory() {
@@ -20,10 +19,13 @@ public class CategoryBeanImpl implements CategoryBean{
 	public ResultSet getCategories() throws Exception {
 		// TODO Auto-generated method stub
 		
-		con = DBconnection.getConnection();
+		String query = "SELECT c_name from categories";
 		
+		PreparedStatement pst = DBconnection.getConnection().prepareStatement(query);
 		
-		return null;
+		ResultSet rs = pst.executeQuery();
+		
+		return rs;
 	}
 
 }

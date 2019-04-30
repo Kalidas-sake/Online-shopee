@@ -18,11 +18,4 @@ public class DBconnection {
 		System.out.println("Connection created");	
 		return con;
 	}
-	
-	public static PreparedStatement createStatement(String query) throws SQLException {
-		pst = con.prepareStatement(query);
-		pst.executeQuery(query);
-		return pst;
-		
-	}
 }

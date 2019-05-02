@@ -9,6 +9,7 @@
 	rel="stylesheet">
 	
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anton|Gugi|Ubuntu" rel="stylesheet">
 
 
 	
@@ -22,6 +23,21 @@
 margin-top: 40px;
 }
 
+.fonta{
+font-family: 'Gugi', cursive;
+
+}
+
+.heading1{
+margin-top: 30px;
+color:rgb(242,106,68);
+font-size:60px;
+}
+
+.heading2{
+font-family: 'Anton', sans-serif;
+color: rgb(0,224,0);
+}
 
 </style>
 
@@ -30,7 +46,7 @@ margin-top: 40px;
 
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-			<a class="navbar-brand" href="#">Online Shopee</a>
+			<a class="navbar-brand fonta" href="index.jsp">Online Shopee</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarCollapse" aria-controls="navbarCollapse"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +55,7 @@ margin-top: 40px;
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item ">
-						<a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="index.jsp" id="home">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Categories </a>
@@ -53,7 +69,7 @@ margin-top: 40px;
 							
 							%>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="about.jsp">About
+					<li class="nav-item"><a class="nav-link" href="about.jsp" id="about">About
 							Us</a></li>
 				</ul>
 				<form class="form-inline mt-2 mt-md-0">
@@ -66,22 +82,5 @@ margin-top: 40px;
 		<div class="mybar"></div>
 	</header>
 	
-	<script type="text/javascript">
 	
-	// Get the container element
-	var btnContainer = document.getElementById("navbarCollapse");
-
-	// Get all buttons with class="btn" inside the container
-	var btns = btnContainer.getElementsByClassName("nav-link");
-
-	// Loop through the buttons and add the active class to the current/clicked button
-	for (var i = 0; i < btns.length; i++) {
-	  btns[i].addEventListener("click", function() {
-		//  alert("alert");
-	    var current = document.getElementsByClassName("active");
-	    current[0].className = current[0].className.replace(" active", "");
-	    this.className += " active";
-	  });
-	}
-	</script>
 </body>

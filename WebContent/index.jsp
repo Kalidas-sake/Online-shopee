@@ -1,3 +1,7 @@
+<%@ page import="com.connection.*" %>
+<%@ page import="com.services.*" %>
+<%@ page import="java.sql.*" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,25 +10,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Online Shopee</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Anton|Gugi|Ubuntu" rel="stylesheet">
 
 
 
 <style type="text/css">
-.fonta{
-font-family: 'Gugi', cursive;
-}
 
-.heading1{
-margin-top: 30px;
-color:rgb(242,106,68);
-font-size:60px;
-}
-
-.heading2{
-font-family: 'Anton', sans-serif;
-color: rgb(0,224,0);
-}
 
 </style>
 </head>
@@ -43,6 +33,7 @@ color: rgb(0,224,0);
 
 <div class=text-center>
 <h3 class="heading2">NEW FRESH ARRIVALS</h3>
+<h2 id="myid"></h2>
 
 </div>
 
@@ -53,57 +44,46 @@ color: rgb(0,224,0);
     <div class="container">
 
       <div class="row">
-        <div class="col-md-4">
+        
+        
+        
+        <%
+        ItemServices is = new ItemServicesImpl();
+		ResultSet rs = is.getAllItems();
+		while(rs.next()){
+			//out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
+			
+			%>
+			
+			<div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h4 class="card-title"><%out.print(rs.getString("itemName")); %></h4>
+              <p class="card-text"><%out.print(rs.getString("itemDesc")); %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
+			
+			
+			<%
+		}
+		
+        %>
 
 </div>
 </div>
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>
+
 
 
 </body>

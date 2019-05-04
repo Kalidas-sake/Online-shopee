@@ -1,12 +1,12 @@
 package com.services;
 
-import java.sql.ResultSet;
+import java.sql.*;
 
 public interface CategoryService {
 
 	boolean createCategory();
 	
-	ResultSet getCategories() throws Exception;
+	ResultSet getCategories(Connection con) throws Exception;
 	
 	
 }

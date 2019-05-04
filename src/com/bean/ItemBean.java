@@ -1,13 +1,13 @@
 package com.bean;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
 
 public interface ItemBean {
 
 boolean addItem(String category,int quantity);
 	
-	ResultSet getAllItems() throws SQLException, Exception;
+	ResultSet getAllItems(Connection con) throws SQLException, Exception;
 	
-	ResultSet getCategoryItems(String category);
+	ResultSet getCategoryItems(Connection con, String category);
 }

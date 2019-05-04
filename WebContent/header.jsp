@@ -39,6 +39,10 @@ font-family: 'Anton', sans-serif;
 color: rgb(0,224,0);
 }
 
+.extra-small{
+padding: 20px;
+font-size: 15px;
+}
 </style>
 
 </head>
@@ -61,12 +65,14 @@ color: rgb(0,224,0);
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Categories </a>
 						<div class="dropdown-menu"> 
 							<%
+							DBconnection dbc = new DBconnection();
+					        Connection con = dbc.getConnection();
 							CategoryService cs = new CategoryServicesImpl();
-							ResultSet rs = cs.getCategories();
+							ResultSet rs = cs.getCategories(con);
 							while(rs.next()){
 								out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
 							}
-							
+							dbc.closeCon(con);
 							%>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="about.jsp" id="about">About

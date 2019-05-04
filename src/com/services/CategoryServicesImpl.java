@@ -1,6 +1,6 @@
 package com.services;
 
-import java.sql.ResultSet;
+import java.sql.*;
 
 import com.bean.*;
 
@@ -15,10 +15,10 @@ public class CategoryServicesImpl implements CategoryService{
 	}
 
 	@Override
-	public ResultSet getCategories() throws Exception {
+	public ResultSet getCategories(Connection con) throws Exception {
 		// TODO Auto-generated method stub
 		
-		return cb.getCategories();
+		return cb.getCategories(con);
 	}
 
 }

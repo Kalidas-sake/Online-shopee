@@ -1,6 +1,6 @@
 package com.services;
 
-import java.sql.ResultSet;
+import java.sql.*;
 import java.sql.SQLException;
 
 import com.bean.ItemBean;
@@ -17,15 +17,15 @@ public class ItemServicesImpl implements ItemServices {
 	}
 
 	@Override
-	public ResultSet getAllItems() throws SQLException, Exception {
+	public ResultSet getAllItems(Connection con) throws SQLException, Exception {
 		// TODO Auto-generated method stub
-		return ib.getAllItems();
+		return ib.getAllItems(con);
 	}
 
 	@Override
-	public ResultSet getCategoryItems(String category) {
+	public ResultSet getCategoryItems(Connection con, String category) {
 		// TODO Auto-generated method stub
-		return ib.getCategoryItems(category);
+		return ib.getCategoryItems(con, category);
 	}
 
 }

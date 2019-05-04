@@ -18,10 +18,8 @@ public class CategoryBeanImpl implements CategoryBean{
 	}
 
 	@Override
-	public ResultSet getCategories() throws Exception {
+	public ResultSet getCategories(Connection con) throws Exception {
 		// TODO Auto-generated method stub
-		
-		con = db.getConnection();
 		String query = "SELECT c_name from categories";
 		PreparedStatement pst = con.prepareStatement(query);
 		ResultSet rs = pst.executeQuery();

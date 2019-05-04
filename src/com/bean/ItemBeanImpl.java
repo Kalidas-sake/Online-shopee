@@ -19,8 +19,7 @@ public class ItemBeanImpl implements ItemBean{
 	}
 
 	@Override
-	public ResultSet getAllItems() throws SQLException, Exception {
-		con = db.getConnection();
+	public ResultSet getAllItems(Connection con) throws SQLException, Exception {
 		String query = "SELECT * from items";	
 		PreparedStatement pst = con.prepareStatement(query);
 		ResultSet rs = pst.executeQuery();
@@ -29,7 +28,7 @@ public class ItemBeanImpl implements ItemBean{
 	}
 
 	@Override
-	public ResultSet getCategoryItems(String category) {
+	public ResultSet getCategoryItems(Connection con, String category) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -48,8 +48,10 @@
         
         
         <%
+        DBconnection dbc = new DBconnection();
+        Connection con = dbc.getConnection();
         ItemServices is = new ItemServicesImpl();
-		ResultSet rs = is.getAllItems();
+		ResultSet rs = is.getAllItems(con);
 		while(rs.next()){
 			//out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
 			
@@ -59,14 +61,15 @@
           <div class="card mb-4 shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             <div class="card-body">
-            <h4 class="card-title"><%out.print(rs.getString("itemName")); %></h4>
+            <h4 class="card-title"><%out.print(rs.getString("itemName")); %><small class="text-secondary extra-small">  Category: <%out.print(rs.getString("c_name")); %></small></h4>
+            <h6 class="text-primary">Rate (per unit): <mark>Rs.<%out.print(rs.getString("itemPrice")); %></mark></h6>
               <p class="card-text"><%out.print(rs.getString("itemDesc")); %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                  <button type="button" class="btn btn-sm btn-success">Buy Now</button>
+                  <button type="button" class="btn btn-sm btn-warning">Add to cart</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                
               </div>
             </div>
           </div>
@@ -75,7 +78,7 @@
 			
 			<%
 		}
-		
+		dbc.closeCon(con);
         %>
 
 </div>

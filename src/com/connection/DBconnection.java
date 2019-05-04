@@ -19,7 +19,7 @@ public class DBconnection {
 		return con;
 	}
 	
-	public static void closeCon(Connection con) throws SQLException {
+	public void closeCon(Connection con) throws SQLException {
 		con.close();
 	}
 }

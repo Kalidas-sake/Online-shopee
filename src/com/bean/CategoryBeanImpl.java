@@ -6,15 +6,16 @@ import com.connection.DBconnection;
 
 public class CategoryBeanImpl implements CategoryBean{
 
-	DBconnection db = new DBconnection();
-	Connection con;
 	
 	@Override
-	public boolean createCategory() {
+	public boolean createCategory(Connection con, String category) throws Exception {
 		// TODO Auto-generated method stub
+		PreparedStatement pst = con.prepareStatement("INSERT INTO categories VALUES (?)");
+		pst.setString(1, category );
+		//System.out.println(category);
 		
 		
-		return false;
+		return pst.execute();
 	}
 
 	@Override
@@ -25,6 +26,13 @@ public class CategoryBeanImpl implements CategoryBean{
 		ResultSet rs = pst.executeQuery();
 		//con.close();
 		return rs;
+	}
+
+	@Override
+	public boolean deleteCategory(Connection con, String category) throws Exception {
+		PreparedStatement pst = con.prepareStatement("DELETE FROM categories where c_name = ?");
+		pst.setString(1, category);
+		return pst.execute();
 	}
 
 }

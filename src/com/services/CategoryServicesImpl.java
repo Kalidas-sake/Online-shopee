@@ -9,9 +9,9 @@ public class CategoryServicesImpl implements CategoryService{
 	CategoryBean cb = new CategoryBeanImpl();
 	
 	@Override
-	public boolean createCategory() {
+	public boolean createCategory(Connection con, String category) throws Exception {
 		// TODO Auto-generated method stub
-		return false;
+		return cb.createCategory(con, category);
 	}
 
 	@Override
@@ -19,6 +19,12 @@ public class CategoryServicesImpl implements CategoryService{
 		// TODO Auto-generated method stub
 		
 		return cb.getCategories(con);
+	}
+
+	@Override
+	public boolean deleteCategory(Connection con, String category) throws Exception {
+		// TODO Auto-generated method stub
+		return cb.deleteCategory(con, category) ;
 	}
 
 }

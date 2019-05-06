@@ -68,6 +68,7 @@ font-size: 15px;
 							DBconnection dbc = new DBconnection();
 					        Connection con = dbc.getConnection();
 							CategoryService cs = new CategoryServicesImpl();
+							
 							ResultSet rs = cs.getCategories(con);
 							while(rs.next()){
 								out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
@@ -77,6 +78,7 @@ font-size: 15px;
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="about.jsp" id="about">About
 							Us</a></li>
+							<li class="nav-item"><a class="nav-link" href="admin/index.jsp" id="about">Admin</a></li>
 				</ul>
 				<form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text"

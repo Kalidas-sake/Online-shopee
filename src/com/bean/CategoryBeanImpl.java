@@ -34,5 +34,9 @@ public class CategoryBeanImpl implements CategoryBean{
 		pst.setString(1, category);
 		return pst.execute();
 	}
+	
+	public void display() {
+		System.out.println("display method of category");
+	}
 
 }

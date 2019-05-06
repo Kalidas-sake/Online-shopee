@@ -40,10 +40,17 @@ public class CategoryController extends HttpServlet {
 			Connection con = dbc.getConnection();
 			CategoryService cs = new CategoryServicesImpl();
 			
-			cs.createCategory(con, category);
+			if(cs.createCategory(con, category)) {
+				
+				response.sendRedirect("admin/errorpage.html");
+			}
+			else {
+				response.sendRedirect("admin/category.jsp");
+			}
+				
 			//RequestDispatcher rd = request.getRequestDispatcher("admin/category.jsp");
 			//rd.forward(request, response);
-			response.sendRedirect("admin/category.jsp");
+			
 			
 		} catch (Exception e) {
 			

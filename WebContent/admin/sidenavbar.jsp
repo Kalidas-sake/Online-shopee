@@ -6,8 +6,8 @@
 										<li><a href="home.jsp"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
 										
 										
-										 <li id="menu-academico" ><a href="category.jsp"><i class="fa fa-envelope nav_icon"></i><span>Categories</span><div class="clearfix"></div></a></li>
-									<li><a href="item.jsp"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Items</span><div class="clearfix"></div></a></li>
+										 <li id="menu-academico" ><a href="category.jsp"><i class="fa fa-th-list nav_icon"></i><span>Categories</span><div class="clearfix"></div></a></li>
+									<li><a href="item.jsp"><i class="fa fa-database nav_icon" aria-hidden="true"></i><span>Items</span><div class="clearfix"></div></a></li>
 									<li id="menu-academico" ><a href="errorpage.html"><i class="fa fa-bar-chart"></i><span>Gallery</span><div class="clearfix"></div></a></li>
 									 
 								  </ul>

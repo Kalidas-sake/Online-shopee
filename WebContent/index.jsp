@@ -16,6 +16,14 @@
 <style type="text/css">
 
 
+.opacit{
+
+}
+
+.nopacit{
+
+}
+
 </style>
 </head>
 <body>
@@ -25,7 +33,7 @@
 
 <!-- Crasual effect -->
 <div class="fonta">
-<div class="jumbotron text-center">
+<div class="jumbotron text-center opacit">
 <h1 class="heading1">Everything at One Place</h1>
 <h5 class="">Our first online vegetables home delivery shopee.<small>  ___by Ashok Mandage</small> </h5>
 
@@ -41,7 +49,7 @@
 
 
 <div class="album py-5 bg-light">
-    <div class="container">
+    <div class="container opacit">
 
       <div class="row">
         
@@ -52,14 +60,18 @@
         Connection con = dbc.getConnection();
         ItemServices is = new ItemServicesImpl();
 		ResultSet rs = is.getAllItems(con);
+		String imagefile="";
 		while(rs.next()){
 			//out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
-			
+			imagefile="uploads/"+rs.getString("thumb");
 			%>
 			
-			<div class="col-md-4">
+			<div class="col-md-4 nopacit">
           <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+            
+            <image height="225" width="100%" xlink:href=<%=imagefile %> /></svg>
+            
             <div class="card-body">
             <h4 class="card-title"><%out.print(rs.getString("itemName")); %><small class="text-secondary extra-small">  Category: <%out.print(rs.getString("c_name")); %></small></h4>
             <h6 class="text-primary">Rate (per unit): <mark>Rs.<%out.print(rs.getString("itemPrice")); %></mark></h6>

@@ -1,7 +1,7 @@
 package com.services;
 
+import java.io.InputStream;
 import java.sql.*;
-import java.sql.SQLException;
 
 import com.bean.ItemBean;
 import com.bean.ItemBeanImpl;
@@ -11,9 +11,9 @@ public class ItemServicesImpl implements ItemServices {
 	ItemBean ib = new ItemBeanImpl();
 	
 	@Override
-	public boolean addItem(String category, int quantity) {
+	public boolean addItem(Connection con,String name, String desc, float price, String cat,int quant, String newFileName) throws SQLException {
 		// TODO Auto-generated method stub
-		return ib.addItem(category, quantity);
+		return ib.addItem(con, name, desc, price, cat, quant, newFileName);
 	}
 
 	@Override
@@ -26,6 +26,12 @@ public class ItemServicesImpl implements ItemServices {
 	public ResultSet getCategoryItems(Connection con, String category) {
 		// TODO Auto-generated method stub
 		return ib.getCategoryItems(con, category);
+	}
+
+	@Override
+	public boolean deleteItem(Connection con, String item) throws SQLException {
+		// TODO Auto-generated method stub
+		return ib.deleteItem(con, item);
 	}
 
 }

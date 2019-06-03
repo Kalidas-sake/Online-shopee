@@ -16,7 +16,10 @@
 <style type="text/css">
 
 
-.opacit{
+.bgimage{
+
+	background-image: url("img/bgblur.jpg");
+	background-attachment: fixed;
 
 }
 
@@ -33,7 +36,7 @@
 
 <!-- Crasual effect -->
 <div class="fonta">
-<div class="jumbotron text-center opacit">
+<div class="jumbotron text-center bgimage">
 <h1 class="heading1">Everything at One Place</h1>
 <h5 class="">Our first online vegetables home delivery shopee.<small>  ___by Ashok Mandage</small> </h5>
 
@@ -49,7 +52,7 @@
 
 
 <div class="album py-5 bg-light">
-    <div class="container opacit">
+    <div class="container bgimage">
 
       <div class="row">
         

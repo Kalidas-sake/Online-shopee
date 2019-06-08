@@ -23,7 +23,7 @@ public class ItemServicesImpl implements ItemServices {
 	}
 
 	@Override
-	public ResultSet getCategoryItems(Connection con, String category) {
+	public ResultSet getCategoryItems(Connection con, String category) throws SQLException {
 		// TODO Auto-generated method stub
 		return ib.getCategoryItems(con, category);
 	}

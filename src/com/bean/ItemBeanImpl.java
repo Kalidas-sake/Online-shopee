@@ -39,9 +39,12 @@ public class ItemBeanImpl implements ItemBean{
 	}
 
 	@Override
-	public ResultSet getCategoryItems(Connection con, String category) {
-		// TODO Auto-generated method stub
-		return null;
+	public ResultSet getCategoryItems(Connection con, String category) throws SQLException {
+		String query = "SELECT * from items where c_name ='"+category+"'";	
+		System.out.println(query);
+		PreparedStatement pst = con.prepareStatement(query);
+		ResultSet rs = pst.executeQuery();
+		return rs;
 	}
 
 	@Override

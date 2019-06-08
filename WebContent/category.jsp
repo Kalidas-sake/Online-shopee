@@ -2,56 +2,37 @@
 <%@ page import="com.services.*" %>
 <%@ page import="java.sql.*" %>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Online Shopee</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Shop by category | MyCakeSelection</title>
 
-
-
-<style type="text/css">
-
-
-.bgimage{
-
-	background-image: url("img/bgblur.jpg");
-	background-attachment: fixed;
-
-}
-
-.nopacit{
+<style>
+.cathead{
+	margin-top: 75px;
 
 }
 
 </style>
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
+
+	<% String cat = request.getParameter("cat"); %>
+
+	<div class="text-center cathead">
+		<h3 class="heading2"><%=cat.toUpperCase() %></h3>
+		<h2 id="myid"></h2>
+
+	</div>
 
 
 
-<!-- Crasual effect -->
-<div class="fonta">
-<div class="jumbotron text-center bgimage">
-<h1 class="heading1">Everything at One Place</h1>
-<h5 class="">Cakes are special. Every birthday, every celebration ends with something sweet,</br> a cake, and people remember. It's all about the memories.<small>  ___by Ashok Mandage</small> </h5>
-
-</div>
-
-<div class=text-center>
-<h3 class="heading2">NEW FRESH ARRIVALS</h3>
-<h2 id="myid"></h2>
-
-</div>
-
-</div>
-
-
-<div class="album py-5 bg-light">
+	<div class="album py-5 bg-light">
     <div class="container bgimage">
 
       <div class="row" id="itemscard">
@@ -59,10 +40,12 @@
         
         
         <%
+       
+        
         DBconnection dbc = new DBconnection();
         Connection con = dbc.getConnection();
         ItemServices is = new ItemServicesImpl();
-		ResultSet rs = is.getAllItems(con);
+		ResultSet rs = is.getCategoryItems(con, cat);
 		String imagefile="";
 		while(rs.next()){
 			//out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
@@ -100,9 +83,6 @@
 </div>
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
-
-
-
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

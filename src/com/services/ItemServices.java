@@ -10,7 +10,7 @@ public interface ItemServices {
 	
 	ResultSet getAllItems(Connection con) throws SQLException, Exception;
 	
-	ResultSet getCategoryItems(Connection con,String category);
+	ResultSet getCategoryItems(Connection con,String category) throws SQLException;
 	
 	boolean deleteItem(Connection con, String item) throws SQLException;
 }

@@ -2,8 +2,6 @@
 <%@ page import="com.services.*" %>
 <%@ page import="java.sql.*" %>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
 	rel="stylesheet">
@@ -71,7 +69,7 @@ font-size: 15px;
 							
 							ResultSet rs = cs.getCategories(con);
 							while(rs.next()){
-								out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
+								%><a class='dropdown-item' href="category.jsp?cat=<%=rs.getString("c_name") %>" ><%=rs.getString("c_name")%></a><% 
 							}
 							dbc.closeCon(con);
 							%>
@@ -83,12 +81,19 @@ font-size: 15px;
 				<form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text"
 						placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					<button class="btn btn-outline-success my-2 my-sm-0" onclick=categoryfunction() type="submit">Search</button>
 				</form>
 			</div>
 		</nav>
 		<div class="mybar"></div>
 	</header>
 	
+	<script type="text/javascript">
 	
+	function categoryfunction(name){
+		
+		alert(name);
+	}
+	
+	</script>
 </body>

@@ -27,6 +27,11 @@
 
 }
 
+.no-underline{
+	text-decoration: none !important;
+	color: #333333;
+}
+
 </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
 <div class="fonta">
 <div class="jumbotron text-center bgimage">
 <h1 class="heading1">Everything at One Place</h1>
-<h5 class="">Cakes are special. Every birthday, every celebration ends with something sweet,</br> a cake, and people remember. It's all about the memories.<small>  ___by Ashok Mandage</small> </h5>
+<h5 class="text-dark">Cakes are special. Every birthday, every celebration ends with something sweet,</br> a cake, and people remember. It's all about the memories.<small>  ___by Ashok Mandage</small> </h5>
 
 </div>
 
@@ -52,7 +57,7 @@
 
 
 <div class="album py-5 bg-light">
-    <div class="container bgimage">
+    <div class="container ">
 
       <div class="row" id="itemscard">
         
@@ -81,7 +86,7 @@
               <p class="card-text"><%out.print(rs.getString("itemDesc")); %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-success">Buy Now</button>
+                  <button type="button" class="btn btn-sm btn-success"><a class="no-underline" href="buynow.jsp">Buy Now</a></button>
                   <button type="button" class="btn btn-sm btn-warning">Add to cart</button>
                 </div>
                 

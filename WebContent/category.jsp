@@ -47,6 +47,9 @@
         ItemServices is = new ItemServicesImpl();
 		ResultSet rs = is.getCategoryItems(con, cat);
 		String imagefile="";
+		
+		
+		if(rs.next()){
 		while(rs.next()){
 			//out.print("<a class='dropdown-item' href='#'>"+rs.getString("c_name")+"</a>");
 			imagefile="uploads/"+rs.getString("thumb");
@@ -74,6 +77,13 @@
         </div>
 			
 			
+			<%
+		}}
+		else{
+			%>
+			<div class="text-center">
+			<h2>No Records Found</h2>
+			</div>
 			<%
 		}
 		dbc.closeCon(con);
